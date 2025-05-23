@@ -1,46 +1,49 @@
 import React, { useContext } from 'react'
-import logo from '../assets/logo1.png'
-import { RiMenu4Line } from "react-icons/ri";
-import { CgProfile } from "react-icons/cg";
+import logo from '../assets/logo3.png'
+
+
 
 
 import { useState } from 'react'
+import { RiMenu4Line } from 'react-icons/ri';
+import { CiMenuBurger } from 'react-icons/ci';
 
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(false);
+ const [isOpen, setIsOpen] = useState(false)
 
-    const toggleMenu = () => {
-        setMenuOpen(!menuOpen);
-    };
-    
 
     return (
         <>
-            <nav className='flex flex-wrap items-center justify-between w-full h-[120px] px-4 md:px-8 relative '>
-                <div id='img' className='flex items-center justify-center h-[120px] w-full md:w-[25%]'>
-                    <img src={logo} alt="logo" className='h-[90px] w-[155px] md:h-[90px] md:w-[155px] max-w-full' />
+            <nav>
+                <div className='flex items-center justify-between'>
+                    {/* logo */}
+                    <div id='img' className='flex items-center justify-center pt-8 h-[120px] w-full md:w-[25%]  '>
+                        <img src={logo} alt="logo" className='h-[150px] w-[165px] md:h-[250px] md:w-[165px] object-cover max-w-full mt-30' />
 
-                </div>
-                <div id="center" className={`md:h-auto h-[100px] w-full md:w-[50%] md:flex md:justify-center md:items-center ${menuOpen ? 'block' : 'hidden'} text-[20px] flex absolute md:static top-[120px] left-0 md:top-auto md:left-auto bg-white md:bg-transparent shadow-md md:shadow-none z-50 md:z-auto`}>
-                    
-                    <ul className='flex flex-col md:flex-row md:items-center gap-4 md:gap-10 p-4 md:p-0'>
-                        <li  className='cursor-pointer hover:text-orange-500 transition-colors duration-300'><a href="#Home">Home</a></li>
-                        <li  className='cursor-pointer hover:text-orange-500 transition-colors duration-300'><a href="#order">Food</a></li>
-                        <li  className='cursor-pointer hover:text-orange-500 transition-colors duration-300'><a href="">Services</a></li>
-                        <li  className='cursor-pointer hover:text-orange-500 transition-colors duration-300'><a href="#footer">Contact</a></li>
-                    </ul>
-                
-                
-               
-                   
-                    <div id='resicon' className='flex items-center ml-auto text-3xl md:hidden cursor-pointer'>
-                        <h1 className='' onClick={toggleMenu} aria-label="Toggle menu" aria-expanded={menuOpen}><RiMenu4Line /></h1>
-                        <h1><CgProfile /></h1>
                     </div>
+                     {/* desktop-menu */}
+                <div className='hidden sm:block cursor-pointer '>
+                    <a href="#Home" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Home</a>
+                    <a href="#order" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Food</a>
+                    <a href="" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Service</a>
+                    <a href="#footer" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Contact</a>
+                </div>
+                <button className='block sm:hidden px-4 cursor-pointer' onClick={()=>{
+                    setIsOpen(!isOpen)
+                }}><CiMenuBurger size={30} /></button>
+                </div>
+                {/* mobile-menu */}
+                <div className={`${isOpen?"block":"hidden"} cursor-pointer sm:hidden space-y-2 text-white text-md pb-3 font-semibold uppercase bg-[#db932f] py-10  mt-20 rounded-2xl `}>
+                    <ul className='flex flex-col items-center justify-center gap-10'>
+                    <a href="#Home" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300  '>Home</a>
+                    <a href="#order" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300 '>Food</a>
+                    <a href="" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300'>Service</a>
+                    <a href="#footer" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300'>Contact</a>
+                    </ul>
                 </div>
             </nav>
-            
+
         </>
     )
 }
