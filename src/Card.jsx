@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 const Card = ({name,image,price,type,id,qty}) => {
   let dispatch=useDispatch()
   return (
-    <div id='order'className='w-[300px] h-[350px] bg-white p-3 rounded-lg flex flex-col gap-3 hover:border-2 border-[#2594cb] cursor-pointer '>
+    <div id='order'className='w-[300px] h-[350px] bg-white p-3 rounded-lg flex flex-col gap-3  hover:border-2 border-[#2594cb] cursor-pointer '>
       <div className='w-full h-[60%] overflow-hidden rounded-lg'>
         <img src={image} alt=""  className='object-cover'/>
       </div>
@@ -20,7 +20,7 @@ const Card = ({name,image,price,type,id,qty}) => {
       </div>
 <button 
 onClick={()=>{dispatch(AddItem({id:id,name:name,price:price,image:image,qty:1}));
-toast.success("item added")}}
+toast.success(name+'  Added')}}
 className='w-full p-3 bg-[#287094]  text-white rounded-lg hover:bg-[#287094] transition-all'>
   Add to dish</button>
     </div>
