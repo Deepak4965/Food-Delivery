@@ -1,11 +1,8 @@
 import React, { useContext } from 'react'
 import logo from '../assets/logo3.png'
-
-
-
-
+import {motion} from 'framer-motion'
 import { useState } from 'react'
-import { RiMenu4Line } from 'react-icons/ri';
+
 import { CiMenuBurger } from 'react-icons/ci';
 
 
@@ -26,7 +23,7 @@ const Header = () => {
                 <div className='hidden sm:block cursor-pointer '>
                     <a href="#Home" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Home</a>
                     <a href="#order" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Food</a>
-                    <a href="" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Service</a>
+                
                     <a href="#footer" className='text-lg px-6 cursor-pointer hover:text-orange-500 transition-colors duration-300'>Contact</a>
                 </div>
                 <button className='block sm:hidden px-4 cursor-pointer' onClick={()=>{
@@ -34,14 +31,21 @@ const Header = () => {
                 }}><CiMenuBurger size={30} /></button>
                 </div>
                 {/* mobile-menu */}
-                <div className={`${isOpen?"block":"hidden"} cursor-pointer sm:hidden space-y-2 text-white text-md pb-3 font-semibold uppercase bg-[#db932f] py-10  mt-20 rounded-2xl `}>
-                    <ul className='flex flex-col items-center justify-center gap-10'>
+                <motion.div
+                initial={{opacity:0,y:-100}}
+                animate={{opacity:1,y:0}}
+                exit={{opacity:0,y:-100}}
+                transition={{duration:0.3}}
+                
+                
+                className={`${isOpen?"block":"hidden"} cursor-pointer sm:hidden space-y-2 shadow-xl text-md pb-3 font-semibold uppercase bg-white py-8 mt-20 rounded-md `}>
+                    <ul className='flex flex-col items-start justify-center gap-10'>
                     <a href="#Home" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300  '>Home</a>
                     <a href="#order" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300 '>Food</a>
-                    <a href="" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300'>Service</a>
+                    
                     <a href="#footer" className='text-lg px-6 block cursor-pointer hover:text-orange-500 transition-colors duration-300'>Contact</a>
                     </ul>
-                </div>
+                </motion.div>
             </nav>
 
         </>
