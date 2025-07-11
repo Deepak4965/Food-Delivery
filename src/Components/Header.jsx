@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+
 import logo from '../assets/logo3.png'
 import {motion} from 'framer-motion'
 import { useState } from 'react'
