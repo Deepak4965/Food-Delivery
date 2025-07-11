@@ -4,6 +4,7 @@ import { MdOutlineFoodBank, MdOutlineFreeBreakfast } from "react-icons/md";
 import { TbSoup } from "react-icons/tb";
 import { TiThSmallOutline } from "react-icons/ti";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const Categories=[
 {
     id:1,
