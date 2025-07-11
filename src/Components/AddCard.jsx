@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+
 
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { DecrementQty, IncrementQty, RemoveItem } from '../redux/cartSlice';
-const AddCard = ({name,image,price,type,id,qty}) => {
+// eslint-disable-next-line react/prop-types
+const AddCard = ({name,image,price,id,qty}) => {
     let dispatch=useDispatch()
-    const [num, setNum] = useState("")
+    // const [num, setNum] = useState("")
   return (
     <div className='w-full h-[120px] p-2 shadow-lg flex items-center justify-between'>
         <div className='w-[60%] h-full  flex gap-5 '>
@@ -32,6 +33,8 @@ const AddCard = ({name,image,price,type,id,qty}) => {
         </div>
         <div className='flex flex-col justify-start items-end gap-6'>
 <span className='text-xl text-[#287094]'>Rs {price}/-</span>
+
+{/* Remove Items */}
 <RiDeleteBin6Line  
 onClick={()=>dispatch(RemoveItem(id))}
 className='w-[30px] h-[30px] text-red-500 cursor-pointer'/>
