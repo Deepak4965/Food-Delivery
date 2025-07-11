@@ -1,11 +1,12 @@
-import React from 'react'
+
 import { GiChickenOven } from 'react-icons/gi'
 import { LuLeafyGreen } from 'react-icons/lu'
 import { useDispatch } from 'react-redux'
 import { AddItem } from './redux/cartSlice'
 import { toast } from 'react-toastify'
 
-const Card = ({name,image,price,type,id,qty}) => {
+// eslint-disable-next-line react/prop-types
+const Card = ({name,image,price,type,id}) => {
   let dispatch=useDispatch()
   return (
     <div id='order'className='w-[300px] h-[350px] bg-white p-3 rounded-lg flex flex-col gap-3  hover:border-2 border-[#2594cb] cursor-pointer '>
