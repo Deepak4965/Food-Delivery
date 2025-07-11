@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { ImTree } from "react-icons/im";
+
 
 const cartSlice = createSlice({
     name: "cart",
