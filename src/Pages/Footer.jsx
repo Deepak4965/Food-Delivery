@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FaGithub, FaLinkedin, FaPhoneAlt } from 'react-icons/fa'
 
 import { IoIosMail } from 'react-icons/io'
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
       </div>
       <div className='text-xl w-full text-center py-5'>
-        <p>© 2025 Food Delivery. All rights reserved</p>
+        <p>© 2025 Master Chief. All rights reserved</p>
       </div>
     </div>
   )
