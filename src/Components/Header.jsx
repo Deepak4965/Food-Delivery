@@ -16,7 +16,8 @@ const Header = () => {
                 <div className='flex items-center justify-between'>
                     {/* logo */}
                     <div id='img' className='flex items-center justify-center pt-8 h-[120px] w-full md:w-[25%]  '>
-                        <img src={logo} alt="logo" className='h-[150px] w-[165px] md:h-[250px] md:w-[165px] object-cover max-w-full mt-30' />
+                        <img src={logo} alt="logo" className='h-[150px] w-[165px] md:h-[250px] 
+                        md:w-[165px] object-cover max-w-full mt-30' />
 
                     </div>
                      {/* desktop-menu */}
